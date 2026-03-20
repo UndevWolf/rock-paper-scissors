@@ -1,0 +1,29 @@
+<!doctype html>
+
+<script>
+
+    // ...Your code...
+    function unique(arr) {
+        for (i = 0; i < arr.length - 1; i++) {
+            let str = arr[i];
+            for (item = i; item < arr.length - 1; item++) {
+
+                if (str === arr[item + 1]) {
+                    arr.splice(item + 1, 1);
+                    item--;
+                }
+
+            }
+
+        }
+        return arr;
+    }
+
+    let strings = ["Hare", "Krishna", "Hare", "Krishna",
+        "Krishna", "Krishna", "Hare", "Hare", ":-O"
+    ];
+
+    alert(unique(strings)); 
+</script>
+
+</html>
