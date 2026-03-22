@@ -1,4 +1,3 @@
-console.log("Hellow");
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3) + 1;
     if (computerChoice === 1) {
@@ -29,24 +28,9 @@ function playRound (human,computer) {
         matchResult.textContent = "You Lose.";
     }
 }
+
 let humanScore = 0;
 let computerScore = 0;
-
-
-
-
-
-// function playGame(rounds) {
-//     for (i = 0; i < rounds; i++) {
-//         console.log("Round " + (i+1))
-//         let humanSelect = getHumanChoice();
-//         let computerSelect = getComputerChoice();
-//         playRound (humanSelect,computerSelect);
-//         console.log(humanScore, computerScore);
-//     }
-//     console.log("Good Game.")
-// }
-
 const choiceButton = document.querySelectorAll(".choiceButton");
 const scores = document.querySelector("#scores");
 const matchResult = document.querySelector("#result");
