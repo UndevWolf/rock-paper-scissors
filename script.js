@@ -49,5 +49,19 @@ choiceButton.forEach(choice => choice.addEventListener("click", (e) => {
             break;
     }
     playRound(human, getComputerChoice());
+    if (humanScore == 5) {
+        scores.textContent = humanScore + " - " + computerScore;
+        humanScore = 0;
+        computerScore = 0;
+        matchResult.textContent = "Conrgrats, you won.";
+        delay(20);
+    }
+    else if (computerScore == 5) {
+        scores.textContent = humanScore + " - " + computerScore;
+        humanScore = 0;
+        computerScore = 0;
+        matchResult.textContent = "Computer won the game.";
+        delay(20);
+    }
     scores.textContent = humanScore + " - " + computerScore;
 }));

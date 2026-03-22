@@ -23,3 +23,12 @@
     align-items:center;
     justify-content: space-around;
 }
+button {
+    border-radius: 6px;
+    background-color:rgb(65, 144, 235);
+    height: 80px;
+    width: 80px;
+}
+button:hover {
+    background-color:rgb(118, 167, 231);
+}
