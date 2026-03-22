@@ -4,11 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="/script.js"></script>
+    <title>Janken</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
+    <div class="container">
+        <div class="title-bar"></div>
+        <div class="game-bar">
+            <h2 id="result"></h2>
+            <h3 id="scores">0 - 0</h3>
+            <div>
+                <button>Rocker</button>
+                <button>Paperer</button>
+                <button>Scissorser</button>
+            </div>
+            <h3>VS.</h3>
+            <div>
+                <button class="choiceButton" value="rock">Rock</button>
+                <button class="choiceButton" value="paper">Paper</button>
+                <button class="choiceButton" value="scissors">Scissors</button>
+            </div>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
 </body>
 
 </html>
