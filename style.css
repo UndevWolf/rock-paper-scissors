@@ -6,7 +6,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    background-color:rgb(192, 237, 255);
+    background-color:rgb(252, 190, 190);
     height: 100vh;
     align-items: stretch;
 }
@@ -31,4 +31,23 @@ button {
 }
 button:hover {
     background-color:rgb(118, 167, 231);
+}
+.anime-screen {
+    position:relative;
+    height: 200px;
+    width: 200px;
+}
+.animation {
+    position:absolute;
+    height: 150px;
+    width: 150px;
+    background-color: rgba(128, 128, 128, 0);
+}
+.anime-container {
+    display:flex;
+}
+#compHand {
+    left:50px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }

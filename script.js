@@ -15,16 +15,13 @@ function playRound (human,computer) {
         (human === "paper" && computer === "rock") ||
         (human === "scissors" && computer === "paper")) {
         humanScore += 1;
-        console.log("Human: " + human + " vs " + "Computer: " + computer);
         matchResult.textContent = "You Win";
      }
     else if (human == computer) {
-        console.log("Human: " + human + " vs " + "Computer: " + computer);
         matchResult.textContent = "Tie";
     }
     else {
         computerScore += 1;
-        console.log("Human: " + human + " vs " + "Computer: " + computer);
         matchResult.textContent = "You Lose.";
     }
 }
@@ -48,20 +45,50 @@ choiceButton.forEach(choice => choice.addEventListener("click", (e) => {
             human = e.target.value;
             break;
     }
-    playRound(human, getComputerChoice());
+    let computerChoice = getComputerChoice()
+    animate(human,computerChoice);
+    playRound(human, computerChoice);
     if (humanScore == 5) {
         scores.textContent = humanScore + " - " + computerScore;
         humanScore = 0;
         computerScore = 0;
         matchResult.textContent = "Conrgrats, you won.";
-        delay(20);
     }
     else if (computerScore == 5) {
         scores.textContent = humanScore + " - " + computerScore;
         humanScore = 0;
         computerScore = 0;
         matchResult.textContent = "Computer won the game.";
-        delay(20);
     }
+    
     scores.textContent = humanScore + " - " + computerScore;
 }));
+
+function animate(player,computer) {
+    
+    const hand = document.querySelectorAll(".animation");
+    const playerHand = document.querySelector("#playerHand");
+    const compHand = document.querySelector("#compHand");
+    hand.forEach((p) => {
+    let id = null;
+    p.src = `assets/rock.png`
+    let pos = 0;
+    let repetition = 0;
+    clearInterval(id);
+    id = setInterval(() => {
+        if (repetition == 3) {
+            p.style.top = "20px";
+            playerHand.src = `assets/${player}.png`;
+            compHand.src = `assets/${computer}.png`
+            clearInterval(id);}
+        else if (pos == 50){
+           pos = 0;
+           repetition++;
+        }   
+        else {
+            pos++;
+            p.style.top = pos + "px";
+        }
+    }, 6);
+    });
+}
