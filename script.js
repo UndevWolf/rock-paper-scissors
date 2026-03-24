@@ -31,6 +31,9 @@ let computerScore = 0;
 const choiceButton = document.querySelectorAll(".choiceButton");
 const scores = document.querySelector("#scores");
 const matchResult = document.querySelector("#result");
+const hand = document.querySelectorAll(".animation");
+const playerHand = document.querySelector("#playerHand");
+const compHand = document.querySelector("#compHand");
 
 choiceButton.forEach(choice => choice.addEventListener("click", (e) => {
     let human = "";
@@ -65,10 +68,6 @@ choiceButton.forEach(choice => choice.addEventListener("click", (e) => {
 }));
 
 function animate(player,computer) {
-    
-    const hand = document.querySelectorAll(".animation");
-    const playerHand = document.querySelector("#playerHand");
-    const compHand = document.querySelector("#compHand");
     hand.forEach((p) => {
     let id = null;
     p.src = `assets/rock.png`
@@ -89,6 +88,6 @@ function animate(player,computer) {
             pos++;
             p.style.top = pos + "px";
         }
-    }, 6);
+    }, 7);
     });
 }
